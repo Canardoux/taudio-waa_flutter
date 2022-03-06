@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - taudio_waa (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - taudio_waa (from `.symlinks/plugins/taudio_waa/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  taudio_waa:
+    :path: ".symlinks/plugins/taudio_waa/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  taudio_waa: c8c9ed3b96fcb34470b7fe0065c10d1e3f18e4b2
+
+PODFILE CHECKSUM: b0b272159268c64df66b1b276887e0e0629a3acb
+
+COCOAPODS: 1.11.2
