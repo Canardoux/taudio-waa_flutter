@@ -49,11 +49,9 @@ library taudio.web_audio;
 import 'dart:async';
 import 'dart:collection' hide LinkedList, LinkedListEntry;
 import 'dart:_internal' show FixedLengthListMixin;
-//import 'dart:html';
-//import 'dart:html_common';
 import 'dart:_native_typed_data';
 import 'dart:typed_data';
-import 'dart:_foreign_helper' show JS;
+//import 'dart:_foreign_helper' show JS;
 import 'dart:_interceptors' show JavaScriptObject;
 
 
@@ -156,6 +154,7 @@ class AnalyserNode extends AudioNode {
 /// that is, a 32-bit floating point buffer, with each sample between -1.0 and 1.0. If the AudioBuffer has multiple channels,
 /// they are stored in separate buffers.class AudioBuffer extends JavaScriptObject {
 class AudioBuffer extends JavaScriptObject {
+  /*
   // To suppress missing implicit constructor warnings.
   factory AudioBuffer._() {
     throw new UnsupportedError("Not supported");
@@ -183,6 +182,8 @@ class AudioBuffer extends JavaScriptObject {
       [int? startInChannel]) native;
 
   Float32List getChannelData(int channelIndex) native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -228,6 +229,7 @@ class AudioBuffer extends JavaScriptObject {
 ///
 /// AudioBufferSourceNodes are created with an internal boolean slot `buffer set`, initially set to false.
 class AudioBufferSourceNode extends AudioScheduledSourceNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory AudioBufferSourceNode._() {
     throw new UnsupportedError("Not supported");
@@ -269,6 +271,8 @@ class AudioBufferSourceNode extends AudioScheduledSourceNode {
   AudioParam? get playbackRate native;
 
   void start([num? when, num? grainOffset, num? grainDuration]) native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -285,6 +289,7 @@ class AudioBufferSourceNode extends AudioScheduledSourceNode {
 /// It's recommended to create one AudioContext and reuse it instead of initializing a new one each time,
 /// and it's OK to use a single AudioContext for several different audio sources and pipeline concurrently.
 class AudioContext extends BaseAudioContext {
+  /*
   // To suppress missing implicit constructor warnings.
   factory AudioContext._() {
     throw new UnsupportedError("Not supported");
@@ -426,6 +431,8 @@ class AudioContext extends BaseAudioContext {
       throw value;
     });
   }
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -516,6 +523,7 @@ class AudioListener extends JavaScriptObject {
 ///
 /// Note: An AudioNode can be target of events, therefore it implements the EventTarget interface.
 class AudioNode extends EventTarget {
+  /*
   // To suppress missing implicit constructor warnings.
   factory AudioNode._() {
     throw new UnsupportedError("Not supported");
@@ -551,6 +559,8 @@ class AudioNode extends EventTarget {
   void connectParam(AudioParam destination, [int output = 0]) {
     _connect(destination, output);
   }
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -606,6 +616,7 @@ class AudioParam extends JavaScriptObject {
 /// ----------------------------------------------------------------------------------------------------
 /// This class is specific on Flutter and does not have any correspondence in the W3C Recommandation
 class AudioParamMap extends JavaScriptObject with MapMixin<String, dynamic> {
+  /*
   // To suppress missing implicit constructor warnings.
   factory AudioParamMap._() {
     throw new UnsupportedError("Not supported");
@@ -667,6 +678,8 @@ class AudioParamMap extends JavaScriptObject with MapMixin<String, dynamic> {
   void clear() {
     throw new UnsupportedError("Not supported");
   }
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -676,6 +689,7 @@ class AudioParamMap extends JavaScriptObject with MapMixin<String, dynamic> {
 /// ----------------------------------------------------------------------------------------------------
 @deprecated
 class AudioProcessingEvent extends Event {
+  /*
   // To suppress missing implicit constructor warnings.
   factory AudioProcessingEvent._() {
     throw new UnsupportedError("Not supported");
@@ -696,6 +710,8 @@ class AudioProcessingEvent extends Event {
   AudioBuffer? get outputBuffer native;
 
   num? get playbackTime native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -714,6 +730,7 @@ class AudioProcessingEvent extends Event {
 /// (that is, before start() is called and after stop() is called).
 /// Silence is represented, as always, by a stream of samples with the value zero (0).
 class AudioScheduledSourceNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory AudioScheduledSourceNode._() {
     throw new UnsupportedError("Not supported");
@@ -728,6 +745,8 @@ class AudioScheduledSourceNode extends AudioNode {
   void stop([num? when]) native;
 
   Stream<Event> get onEnded => endedEvent.forTarget(this);
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -816,6 +835,7 @@ class AudioWorkletGlobalScope extends WorkletGlobalScope {
 /// which can be connected to an audio routing graph along with other nodes. It has an associated AudioWorkletProcessor,
 /// which does the actual audio processing in a Web Audio rendering thread.
 class AudioWorkletNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory AudioWorkletNode._() {
     throw new UnsupportedError("Not supported");
@@ -839,6 +859,8 @@ class AudioWorkletNode extends AudioNode {
       JS('AudioWorkletNode', 'new AudioWorkletNode(#,#)', context, name);
 
   AudioParamMap? get parameters native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -869,6 +891,7 @@ class AudioWorkletProcessor extends JavaScriptObject {
 ///
 /// A BaseAudioContext can be a target of events, therefore it implements the EventTarget interface.
 class BaseAudioContext extends EventTarget {
+  /*
   // To suppress missing implicit constructor warnings.
   factory BaseAudioContext._() {
     throw new UnsupportedError("Not supported");
@@ -959,6 +982,8 @@ class BaseAudioContext extends EventTarget {
           errorCallback));
 
   Future resume() => promiseToFuture(JS("", "#.resume()", this));
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -971,6 +996,7 @@ class BaseAudioContext extends EventTarget {
 /// It is an AudioNode that can represent different kinds of filters, tone control devices,
 /// and graphic equalizers. A BiquadFilterNode always has exactly one input and one output.
 class BiquadFilterNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory BiquadFilterNode._() {
     throw new UnsupportedError("Not supported");
@@ -1002,6 +1028,8 @@ class BiquadFilterNode extends AudioNode {
 
   void getFrequencyResponse(Float32List frequencyHz, Float32List magResponse,
       Float32List phaseResponse) native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1025,6 +1053,7 @@ class BiquadFilterNode extends AudioNode {
 /// In that case, when the signal is sent to the AudioContext.
 /// listener object, supernumerary channels will be ignored.
 class ChannelMergerNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory ChannelMergerNode._() {
     throw new UnsupportedError("Not supported");
@@ -1041,6 +1070,8 @@ class ChannelMergerNode extends AudioNode {
       JS('ChannelMergerNode', 'new ChannelMergerNode(#,#)', context, options);
   static ChannelMergerNode _create_2(context) =>
       JS('ChannelMergerNode', 'new ChannelMergerNode(#)', context);
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1058,6 +1089,7 @@ class ChannelMergerNode extends AudioNode {
 /// In the case that no value is given, it will default to 6.
 /// If there are fewer channels in the input than there are outputs, supernumerary outputs are silent.
 class ChannelSplitterNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory ChannelSplitterNode._() {
     throw new UnsupportedError("Not supported");
@@ -1074,6 +1106,8 @@ class ChannelSplitterNode extends AudioNode {
       'ChannelSplitterNode', 'new ChannelSplitterNode(#,#)', context, options);
   static ChannelSplitterNode _create_2(context) =>
       JS('ChannelSplitterNode', 'new ChannelSplitterNode(#)', context);
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1093,6 +1127,7 @@ class ChannelSplitterNode extends AudioNode {
 /// - Number of inputs	0
 /// - Number of outputs	1
 class ConstantSourceNode extends AudioScheduledSourceNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory ConstantSourceNode._() {
     throw new UnsupportedError("Not supported");
@@ -1111,6 +1146,8 @@ class ConstantSourceNode extends AudioScheduledSourceNode {
       JS('ConstantSourceNode', 'new ConstantSourceNode(#)', context);
 
   AudioParam? get offset native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1129,6 +1166,7 @@ class ConstantSourceNode extends AudioScheduledSourceNode {
 /// - Channel count	1, 2, or 4
 /// - Channel interpretation	"speakers"
 class ConvolverNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory ConvolverNode._() {
     throw new UnsupportedError("Not supported");
@@ -1153,6 +1191,8 @@ class ConvolverNode extends AudioNode {
   bool? get normalize native;
 
   set normalize(bool? value) native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1176,6 +1216,7 @@ class ConvolverNode extends AudioNode {
 /// - Channel count	2 (not used in the default count mode)
 /// - Channel interpretation	"speakers"
 class DelayNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory DelayNode._() {
     throw new UnsupportedError("Not supported");
@@ -1194,6 +1235,8 @@ class DelayNode extends AudioNode {
       JS('DelayNode', 'new DelayNode(#)', context);
 
   AudioParam? get delayTime native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1213,6 +1256,7 @@ class DelayNode extends AudioNode {
 /// - Channel count	2
 /// - Channel interpretation	"speakers"
 class DynamicsCompressorNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory DynamicsCompressorNode._() {
     throw new UnsupportedError("Not supported");
@@ -1244,6 +1288,8 @@ class DynamicsCompressorNode extends AudioNode {
   AudioParam? get release native;
 
   AudioParam? get threshold native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1266,6 +1312,7 @@ class DynamicsCompressorNode extends AudioNode {
 /// - Channel count	2 (not used in the default count mode)
 /// - Channel interpretation	"speakers"
 class GainNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory GainNode._() {
     throw new UnsupportedError("Not supported");
@@ -1284,6 +1331,8 @@ class GainNode extends AudioNode {
       JS('GainNode', 'new GainNode(#)', context);
 
   AudioParam? get gain native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1317,6 +1366,7 @@ class GainNode extends AudioNode {
 /// but this can be limited after some finite time in practice, when the output has approached zero closely enough.
 /// The actual time that takes depends on the filter coefficients provided.
 class IirFilterNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory IirFilterNode._() {
     throw new UnsupportedError("Not supported");
@@ -1331,6 +1381,8 @@ class IirFilterNode extends AudioNode {
 
   void getFrequencyResponse(Float32List frequencyHz, Float32List magResponse,
       Float32List phaseResponse) native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1349,6 +1401,7 @@ class IirFilterNode extends AudioNode {
 /// - Number of outputs	1
 /// - Channel count
 class MediaElementAudioSourceNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory MediaElementAudioSourceNode._() {
     throw new UnsupportedError("Not supported");
@@ -1365,6 +1418,8 @@ class MediaElementAudioSourceNode extends AudioNode {
       options);
 
   MediaElement? get mediaElement native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1384,6 +1439,7 @@ class MediaElementAudioSourceNode extends AudioNode {
 /// - Channel count mode	"explicit"
 /// - Channel count interpretation	"speakers"
 class MediaStreamAudioDestinationNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory MediaStreamAudioDestinationNode._() {
     throw new UnsupportedError("Not supported");
@@ -1408,6 +1464,8 @@ class MediaStreamAudioDestinationNode extends AudioNode {
       context);
 
   MediaStream? get stream native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1432,6 +1490,7 @@ class MediaStreamAudioDestinationNode extends AudioNode {
 /// - Number of outputs	1
 /// - Channel count	defined by the first audio MediaStreamTrack passed to the AudioContext.createMediaStreamSource() method that created it.
 class MediaStreamAudioSourceNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory MediaStreamAudioSourceNode._() {
     throw new UnsupportedError("Not supported");
@@ -1448,6 +1507,8 @@ class MediaStreamAudioSourceNode extends AudioNode {
       options);
 
   MediaStream? get mediaStream native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1457,6 +1518,7 @@ class MediaStreamAudioSourceNode extends AudioNode {
 /// ----------------------------------------------------------------------------------------------------
 @deprecated
 class OfflineAudioCompletionEvent extends Event {
+  /*
   // To suppress missing implicit constructor warnings.
   factory OfflineAudioCompletionEvent._() {
     throw new UnsupportedError("Not supported");
@@ -1473,6 +1535,8 @@ class OfflineAudioCompletionEvent extends Event {
       eventInitDict);
 
   AudioBuffer? get renderedBuffer native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1485,6 +1549,7 @@ class OfflineAudioCompletionEvent extends Event {
 /// In contrast with a standard AudioContext, an OfflineAudioContext doesn't render
 /// the audio to the device hardware; instead, it generates it, as fast as it can, and outputs the result to an AudioBuffer.
 class OfflineAudioContext extends BaseAudioContext {
+  /*
   // To suppress missing implicit constructor warnings.
   factory OfflineAudioContext._() {
     throw new UnsupportedError("Not supported");
@@ -1524,6 +1589,8 @@ class OfflineAudioContext extends BaseAudioContext {
   @JSName('suspend')
   Future suspendFor(num suspendTime) =>
       promiseToFuture(JS("", "#.suspend(#)", this, suspendTime));
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1541,6 +1608,7 @@ class OfflineAudioContext extends BaseAudioContext {
 /// - Channel count	2 (not used in the default count mode)
 /// - Channel interpretation	speakers
 class OscillatorNode extends AudioScheduledSourceNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory OscillatorNode._() {
     throw new UnsupportedError("Not supported");
@@ -1567,6 +1635,8 @@ class OscillatorNode extends AudioScheduledSourceNode {
   set type(String? value) native;
 
   void setPeriodicWave(PeriodicWave periodicWave) native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1590,6 +1660,7 @@ class OscillatorNode extends AudioScheduledSourceNode {
 /// - Channel count	2
 /// - Channel interpretation	"speakers"
 class PannerNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory PannerNode._() {
     throw new UnsupportedError("Not supported");
@@ -1654,6 +1725,8 @@ class PannerNode extends AudioNode {
   void setOrientation(num x, num y, num z) native;
 
   void setPosition(num x, num y, num z) native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1666,6 +1739,7 @@ class PannerNode extends AudioNode {
 /// PeriodicWave has no inputs or outputs; it is used to define custom oscillators when calling OscillatorNode.setPeriodicWave().
 /// The PeriodicWave itself is created/returned by BaseAudioContext.createPeriodicWave.
 class PeriodicWave extends JavaScriptObject {
+  /*
   // To suppress missing implicit constructor warnings.
   factory PeriodicWave._() {
     throw new UnsupportedError("Not supported");
@@ -1682,6 +1756,8 @@ class PeriodicWave extends JavaScriptObject {
       JS('PeriodicWave', 'new PeriodicWave(#,#)', context, options);
   static PeriodicWave _create_2(context) =>
       JS('PeriodicWave', 'new PeriodicWave(#)', context);
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1738,6 +1814,7 @@ class ScriptProcessorNode extends AudioNode {
 /// - Channel count	2
 /// - Channel interpretation	"speakers"
 class StereoPannerNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory StereoPannerNode._() {
     throw new UnsupportedError("Not supported");
@@ -1756,6 +1833,8 @@ class StereoPannerNode extends AudioNode {
       JS('StereoPannerNode', 'new StereoPannerNode(#)', context);
 
   AudioParam? get pan native;
+
+   */
 }
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1776,6 +1855,7 @@ class StereoPannerNode extends AudioNode {
 /// - Channel count	2 (not used in the default count mode)
 /// - Channel interpretation	"speakers"
 class WaveShaperNode extends AudioNode {
+  /*
   // To suppress missing implicit constructor warnings.
   factory WaveShaperNode._() {
     throw new UnsupportedError("Not supported");
@@ -1800,4 +1880,6 @@ class WaveShaperNode extends AudioNode {
   String? get oversample native;
 
   set oversample(String? value) native;
+  
+   */
 }
