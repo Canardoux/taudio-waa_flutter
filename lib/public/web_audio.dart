@@ -46,13 +46,13 @@
 /// {@category WAA}
 library taudio.web_audio;
 
-import 'dart:async';
-import 'dart:collection' hide LinkedList, LinkedListEntry;
-import 'dart:_internal' show FixedLengthListMixin;
-import 'dart:_native_typed_data';
-import 'dart:typed_data';
+//import 'dart:async';
+//import 'dart:collection' hide LinkedList, LinkedListEntry;
+//import 'dart:_internal' show FixedLengthListMixin;
+//import 'dart:_native_typed_data';
+//import 'dart:typed_data';
 //import 'dart:_foreign_helper' show JS;
-import 'dart:_interceptors' show JavaScriptObject;
+//import 'dart:_interceptors' show JavaScriptObject;
 
 
 /// ----------------------------------------------------------------------------------------------------
@@ -1880,6 +1880,6 @@ class WaveShaperNode extends AudioNode {
   String? get oversample native;
 
   set oversample(String? value) native;
-  
+
    */
 }
