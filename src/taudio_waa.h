@@ -20,7 +20,7 @@
 // For very short-lived functions, it is fine to call them on the main isolate.
 // They will block the Dart execution while running the native function, so
 // only do this for native functions which are guaranteed to be short-lived.
-FFI_PLUGIN_EXPORT intptr_t sum(intptr_t a, intptr_t b);
+FFI_PLUGIN_EXPORT intptr_t sum_c(intptr_t a, intptr_t b);
 
 // A longer lived native function, which occupies the thread calling it.
 //

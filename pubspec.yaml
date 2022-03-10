@@ -1,24 +1,30 @@
 name: taudio_waa
-description: "A Flutter wrapper around web_audio_api_rs."
-version: 0.0.2-beta-1+3
-homepage: https://taudio-waa.thetatau.xyz/index.html
-repository: https://github.com/canardoux/taudio-waa_flutter
+description: A new Flutter plugin project.
+version: 0.0.1-beta.1+6
 
+homepage:
 
 environment:
+  flutter: ">=2.5.0"
   sdk: '>=2.12.0 <3.0.0'
-  flutter: ">=2.0.0"
+
 
 dependencies:
   flutter:
     sdk: flutter
+  taudio_waa_platform_interface:
+    path: ../taudio_waa_platform_interface
+  taudio_waa_web:
+    path: ../taudio_waa_web
+  flutter_web_plugins:
+    sdk: flutter
 
 dev_dependencies:
   ffi: ^1.1.2
-  ffigen: ^4.1.3
+  ffigen: ^4.1.2
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.4
+  flutter_lints: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -35,20 +41,34 @@ flutter:
   # This is required for using `dart:ffi`.
   # All these are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
-  #
-  # Please refer to README.md for a detailed explanation.
   plugin:
     platforms:
+
       android:
+        package: xyz.thetatau.taudio_waa
+        pluginClass: TaudioWaaPlugin
         ffiPlugin: true
+
       ios:
+        pluginClass: TaudioWaaPlugin
         ffiPlugin: true
+
       linux:
+        pluginClass: TaudioWaaPlugin
         ffiPlugin: true
+
       macos:
+        pluginClass: TaudioWaaPlugin
         ffiPlugin: true
+
       windows:
+        pluginClass: TaudioWaaPluginCApi
         ffiPlugin: true
+
+      web:
+        default_package: flauto_web
+        #pluginClass: TaudioWaaWeb
+        #fileName: taudio_waa_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
-import 'package:taudio_waa/taudio_waa.dart' as taudio_waa;
+import 'package:taudio_waa/taudio_waa.dart' ;
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +13,71 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
+
 class _MyAppState extends State<MyApp> {
   late int sumResult;
-  late Future<int> sumAsyncResult;
 
   @override
   void initState() {
     super.initState();
-    sumResult = taudio_waa.sum(1, 2);
-    sumAsyncResult = taudio_waa.sumAsync(3, 4);
+    sumResult = TaudioWaa().sum(1, 2);
   }
+
+
+
+  void onPressed()
+  {
+
+    String s = TaudioWaa().greeting("John Smith");
+    print(s);
+    /*
+// Prepare the parameters
+    final nameStr = "John Smith";
+    final Pointer<Utf8> namePtr = nameStr.toNativeUtf8(); //Utf8.toUtf8(nameStr);
+    print("- Calling rust_greeting with argument:  $namePtr");
+
+// Call rust_greeting
+    final Pointer<Utf8> resultPtr = rustGreeting(namePtr);
+    print("- Result pointer:  $resultPtr");
+
+// Handle the result pointer
+    final String greetingStr = resultPtr.toDartString();
+    print("- Response string:  $greetingStr");
+*/
+/*
+
+    // Create an empty two second stereo buffer at the
+    // sample rate of the AudioContext
+    var frameCount = (audioCtx.sampleRate! * 2). floor();
+    var myArrayBuffer = audioCtx.createBuffer(channels, frameCount, audioCtx.sampleRate!);
+    // Fill the buffer with white noise;
+    //just random values between -1.0 and 1.0
+
+    for (int channel = 0; channel < channels; channel++) {
+      // This gives us the actual array that contains the data
+      var  nowBuffering = myArrayBuffer.getChannelData(channel);
+      for (int i = 0; i < frameCount; i++) {
+        // rng.nextInt(2) is in [0; 2]
+        // audio needs to be in [-1.0; 1.0]
+        nowBuffering[i] = rng.nextInt(2)  - 1;
+      }
+    }
+
+    // Get an AudioBufferSourceNode.
+    // This is the AudioNode to use when we want to play an AudioBuffer
+    var source = audioCtx.createBufferSource();
+    // set the buffer in the AudioBufferSourceNode
+    source.buffer = myArrayBuffer;
+    // connect the AudioBufferSourceNode to the
+    // destination so we can hear the sound
+    source.connectNode(audioCtx.destination!);
+    // start the source playing
+    source.start();
+
+
+ */
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -52,18 +106,7 @@ class _MyAppState extends State<MyApp> {
                   textAlign: TextAlign.center,
                 ),
                 spacerSmall,
-                FutureBuilder<int>(
-                  future: sumAsyncResult,
-                  builder: (BuildContext context, AsyncSnapshot<int> value) {
-                    final displayValue =
-                        (value.hasData) ? value.data : 'loading';
-                    return Text(
-                      'await sumAsync(3, 4) = $displayValue',
-                      style: textStyle,
-                      textAlign: TextAlign.center,
-                    );
-                  },
-                ),
+                RaisedButton(onPressed: onPressed, child: Text('Make white noise')),
               ],
             ),
           ),

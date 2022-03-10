@@ -17,3 +17,6 @@ preamble: |
 comments:
   style: any
   length: full
+
+llvm-path:
+   - '/opt/homebrew/Cellar/llvm/13.0.1_1'
