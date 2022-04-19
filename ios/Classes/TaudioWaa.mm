@@ -1,15 +1,14 @@
-#import "TaudioWaaPlugin.h"
+#import "TaudioWaa.h"
+#import "../../../taudio-waa_native/rust/target/bindings.h"
 
-extern int add_c(int a, int b);
 
-@implementation TaudioWaaPlugin
+@implementation TaudioWaa
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
       methodChannelWithName:@"taudio_waa"
             binaryMessenger:[registrar messenger]];
-  TaudioWaaPlugin* instance = [[TaudioWaaPlugin alloc] init];
+  TaudioWaa* instance = [[TaudioWaa alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
-        //int x = add_c(1,2);
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
@@ -19,5 +18,11 @@ extern int add_c(int a, int b);
     result(FlutterMethodNotImplemented);
   }
 }
+
+// ...
+//- (void) dummyMethodToEnforceBundling {
+    // This will never be executed
+    ///rust_greeting("");
+  //}
 
 @end

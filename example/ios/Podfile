@@ -44,5 +44,6 @@ end
 # =====================================================
 # The following instruction is only for Tau debugging.
 # Do not insert such a line in a real App.
-pod 'taudio_waa_native', :path => '../../../taudio-waa_native'
+  pod 'taudio-waa_native', :path => '../../../taudio-waa_native'
+
 # =====================================================

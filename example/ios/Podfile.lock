@@ -1,27 +1,28 @@
 PODS:
   - Flutter (1.0.0)
+  - taudio-waa_native (9.2.2)
   - taudio_waa (0.0.1):
     - Flutter
-  - taudio_waa_native (9.0.0-beta-1)
+    - taudio-waa_native
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - taudio-waa_native (from `../../../taudio-waa_native`)
   - taudio_waa (from `.symlinks/plugins/taudio_waa/ios`)
-  - taudio_waa_native (from `../../../taudio-waa_native`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  taudio-waa_native:
+    :path: "../../../taudio-waa_native"
   taudio_waa:
     :path: ".symlinks/plugins/taudio_waa/ios"
-  taudio_waa_native:
-    :path: "../../../taudio-waa_native"
 
 SPEC CHECKSUMS:
-  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  taudio_waa: 22320709467a9d19a6c787370a5b43bbf34386f4
-  taudio_waa_native: df8c464a8efeb437841e4fa53c6fabde47f2a1aa
+  Flutter: 405776dd0763d7e32a8f989d4e271ca1317d080c
+  taudio-waa_native: 0f484414cd2dbb105456911b2c5059d4e6a0d5a2
+  taudio_waa: 5f32d4c916c46ba874a00c7e7fa49d1551626234
 
-PODFILE CHECKSUM: 5be4f87c29fca89639722ecc6418a8f682d20425
+PODFILE CHECKSUM: 4e64986a67b81d0d459ac1fb66305e06804d6355
 
 COCOAPODS: 1.11.2

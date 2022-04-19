@@ -79,6 +79,12 @@ class _MyAppState extends State<MyApp> {
   }
 
 
+  void boum()
+  {
+      String s = TaudioWaa().greeting("John Smith");
+      print('boum() => $s');
+  }
+
   @override
   Widget build(BuildContext context) {
     const textStyle = TextStyle(fontSize: 25);
@@ -106,7 +112,7 @@ class _MyAppState extends State<MyApp> {
                   textAlign: TextAlign.center,
                 ),
                 spacerSmall,
-                RaisedButton(onPressed: onPressed, child: Text('Make white noise')),
+                TextButton(onPressed: boum, child: Text('TOTO')),
               ],
             ),
           ),

@@ -12,12 +12,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  taudio_waa_platform_interface:
-    path: ../taudio_waa_platform_interface
-  taudio_waa_web:
-    path: ../taudio_waa_web
-  flutter_web_plugins:
-    sdk: flutter
+  #taudio_waa_platform_interface:
+    #path: ../taudio_waa_platform_interface
+  #taudio_waa_web:
+    #path: ../taudio_waa_web
+  #flutter_web_plugins:
+    #sdk: flutter
+  ffi: ^1.1.2
 
 dev_dependencies:
   ffi: ^1.1.2
@@ -44,29 +45,29 @@ flutter:
   plugin:
     platforms:
 
-      android:
-        package: xyz.thetatau.taudio_waa
-        pluginClass: TaudioWaaPlugin
-        ffiPlugin: true
+      #android:
+        #package: xyz.thetatau.taudio_waa
+        #pluginClass: TaudioWaa
+        #ffiPlugin: true
 
       ios:
-        pluginClass: TaudioWaaPlugin
+        pluginClass: TaudioWaa
         ffiPlugin: true
 
-      linux:
-        pluginClass: TaudioWaaPlugin
-        ffiPlugin: true
+      #linux:
+        #pluginClass: TaudioWaa
+        #ffiPlugin: true
 
-      macos:
-        pluginClass: TaudioWaaPlugin
-        ffiPlugin: true
+      #macos:
+        #pluginClass: TaudioWaa
+        #ffiPlugin: true
 
-      windows:
-        pluginClass: TaudioWaaPluginCApi
-        ffiPlugin: true
+      #windows:
+        #pluginClass: TaudioWaaPlugiCApi
+        #ffiPlugin: true
 
-      web:
-        default_package: flauto_web
+      #web:
+        #default_package: flauto_web
         #pluginClass: TaudioWaaWeb
         #fileName: taudio_waa_web.dart
 
